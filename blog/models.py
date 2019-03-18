@@ -10,6 +10,7 @@ class Post(models.Model):
             default=timezone.now)
     published_date = models.DateTimeField(
             blank=True, null=True)
+    specifications = models.ImageField(upload_to='imagen_specifications' , null=True )
 
     def publish(self):
         self.published_date = timezone.now()
@@ -17,3 +18,6 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+class Comentario(models.Model):
+      coment = models.TextField()
+      fk_post = models.ForeignKey(Post , on_delete=models.CASCADE)
