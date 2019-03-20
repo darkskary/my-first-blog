@@ -11,16 +11,17 @@
   <div class="post col-md-6">
   <p>{{ post.text|linebreaksbr }}</p>
   </div>
-  <div>
-      <h1>New post</h1>
+      <h1 class="col-md-12">Comentarios </h1>
+        <div class="post col-md-12">
     <form method="POST" class="comentario-form">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
-
-    <h1>{{ comentario.coment }}</h1>
+    </div>
+<div class="post col-md-12">
+  {% for comentario in comentarios %}
+    <p>{{ comentario.coment }}</p>
+{% endfor %}
+</div>
   </div>
-
-  </div>
-
 {% endblock %}

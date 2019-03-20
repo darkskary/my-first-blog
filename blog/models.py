@@ -19,5 +19,5 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 class Comentario(models.Model):
-      coment = models.TextField()
-      fk_post = models.ForeignKey(Post , on_delete=models.CASCADE)
+      coment = models.TextField(max_length=500)
+      fk_post = models.ForeignKey( Post , on_delete=models.CASCADE)

@@ -13,3 +13,4 @@ class ComentarioForm(forms.ModelForm):
     class Meta:
         model = Comentario
         fields = ('coment' ,'fk_post')
+        widgets = {'fk_post': forms.HiddenInput()}
